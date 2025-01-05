@@ -2,12 +2,15 @@
   "name": "react-grid-app",
   "version": "1.0.0",
   "description": "A simple React app showcasing a 10x10 grid of HTML elements",
+  "homepage": "https://lolispo.github.io/ladders",
   "main": "index.tsx",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -17,7 +20,8 @@
   },
   "devDependencies": {
     "@types/react": "^19.0.2",
-    "@types/react-dom": "^19.0.2"
+    "@types/react-dom": "^19.0.2",
+    "gh-pages": "^6.3.0"
   },
   "keywords": [
     "react",

@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ladders/static/css/main.d58d4b8b.css",
+    "main.js": "/ladders/static/js/main.82b41c7b.js",
+    "index.html": "/ladders/index.html",
+    "main.d58d4b8b.css.map": "/ladders/static/css/main.d58d4b8b.css.map",
+    "main.82b41c7b.js.map": "/ladders/static/js/main.82b41c7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d58d4b8b.css",
+    "static/js/main.82b41c7b.js"
+  ]
+}

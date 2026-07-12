@@ -1,9 +1,13 @@
-# Features
+# TODO
 
-* adjust size of whole board based on board size (Too tall right now)
-* Ladder max gain/loss half the map
+All previously tracked items are done:
 
+- [x] Adjust board size to fit the viewport (was too tall) — board now auto-scales.
+- [x] Cap ladder/snake gain/loss at half the board.
+- [x] Fix automatic mode reporting the wrong "from" position in logs.
 
-# bugs
+## Ideas / backlog
 
-* Automatic mode gives wrong from position in logs
+- Sound effects on roll / ladder / snake.
+- Persist the current game across reloads.
+- Editable player names and custom colors.

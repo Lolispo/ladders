@@ -1,0 +1,50 @@
+/* Design system tokens — "Game Night". See DESIGN.md. */
+:root {
+  /* Table / surfaces */
+  --table-top: #171334;
+  --table-bot: #241a45;
+  --felt: #2a2350;
+  --felt-2: #322a63;
+  --felt-edge: #3b3470;
+
+  /* Cells */
+  --cell: #fdfcf9;
+  --cell-alt: #eef0fb;
+  --ink: #221d3d;
+  --ink-soft: #6f6a90;
+  --paper: #f4f5fb;
+  --paper-dim: #b7b1d8;
+
+  /* Semantics */
+  --ladder: #1f9d63;
+  --ladder-tint: #d3efe0;
+  --snake: #ef6a43;
+  --snake-tint: #fbdccf;
+  --gold: #f2c14e;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* Radii */
+  --radius-1: 6px;
+  --radius-2: 10px;
+  --radius-3: 16px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgba(10, 6, 30, 0.25);
+  --shadow-2: 0 8px 24px rgba(8, 4, 24, 0.35);
+  --shadow-3: 0 18px 48px rgba(6, 2, 20, 0.45);
+
+  /* Type */
+  --font-display: "Fredoka", "Nunito", system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Menlo", "Consolas", monospace;
+
+  --grid-gap: clamp(2px, 0.4vw, 6px);
+}

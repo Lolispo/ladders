@@ -1,114 +1,100 @@
 // components/Grid.tsx
-import React, { useState, useEffect } from "react";
-import { PlayerType } from "../models/Player";
-import { GAMEBOARD_SIZE, ROW_LENGTH } from "../models/Constants";
+import React from "react";
+import { Board, Player } from "../game/types";
 
 interface GridProps {
-  players: PlayerType[];
-  ladders: { start: number; end: number }[];
+  board: Board;
+  players: Player[];
+  currentTurnId: number | null;
 }
 
-const getCellColor = (position: number, ladders: { start: number; end: number }[]) => {
-  for (let i = 0; i < ladders.length; i++) {
-    if (ladders[i].start === position || ladders[i].end === position) {
-      return `ladder-color-${i}`;
-    }
+interface CellInfo {
+  fillClass: string;
+  badge: { className: string; text: string } | null;
+  endmark: { className: string; symbol: string } | null;
+}
+
+const cellInfo = (board: Board, position: number): CellInfo => {
+  const start = board.elements.find((e) => e.start === position);
+  if (start) {
+    const isLadder = start.type === "ladder";
+    return {
+      fillClass: isLadder ? "cell-ladder-start" : "cell-snake-start",
+      badge: {
+        className: isLadder ? "cell__badge--ladder" : "cell__badge--snake",
+        text: `${isLadder ? "↗" : "↘"}${start.end}`,
+      },
+      endmark: null,
+    };
   }
-  return "";
+  const end = board.elements.find((e) => e.end === position);
+  if (end) {
+    const isLadder = end.type === "ladder";
+    return {
+      fillClass: isLadder ? "cell-ladder-end" : "cell-snake-end",
+      badge: null,
+      endmark: {
+        className: isLadder ? "cell__endmark--ladder" : "cell__endmark--snake",
+        symbol: isLadder ? "⤴" : "⤵",
+      },
+    };
+  }
+  return { fillClass: "", badge: null, endmark: null };
 };
 
-const Grid: React.FC<GridProps> = ({ players, ladders }) => {
-  const [cells, setCells] = useState(
-    Array.from({ length: GAMEBOARD_SIZE }, (_, index) => ({
-      position: index + 1,
-      players: [] as PlayerType[],
-    }))
-  );
+const Grid: React.FC<GridProps> = ({ board, players, currentTurnId }) => {
+  const { rows, cols } = board;
 
-  useEffect(() => {
-    const updatedCells = cells.map((cell) => ({
-      ...cell,
-      players: players.filter((player) => player.position === cell.position),
-    }));
-    setCells(updatedCells);
-  }, [players]);
-
-  const getLadderSymbol = (
-    ladders: { start: number; end: number }[],
-    position: number
-  ): { symbol: string; color: string; fontweight: string } => {
-    let symbol = "";
-    let color = "black";
-    let fontweight = "normal";
-  
-    const ladderStart = ladders.find((ladder) => ladder.start === position);
-    const ladderEnd = ladders.find((ladder) => ladder.end === position);
-  
-    if (ladderStart && ladderStart.end > ladderStart.start) {
-      // Ascending ladder starts here
-      symbol = "↗";
-      color = "green";
-      fontweight = "bold";
-    } else if (ladderStart && ladderStart.end < ladderStart.start) {
-      // Descending ladder starts here
-      symbol = "↘";
-      color = "red";
-      fontweight = "bold";
-    } else if (ladderEnd && ladderEnd.end > ladderEnd.start) {
-      // Ascending ladder ends here
-      symbol = "⤴";
-      color = "blue";
-      fontweight = "bold";
-    } else if (ladderEnd && ladderEnd.end < ladderEnd.start) {
-      // Descending ladder ends here
-      symbol = "⤵";
-      color = "purple";
-      fontweight = "bold";
-    }
-  
-    return { symbol, color, fontweight };
-  };
-  
-
-  const grid = Array.from({ length: GAMEBOARD_SIZE / ROW_LENGTH }, (_, row) => (
+  const rowEls = Array.from({ length: rows }, (_, row) => (
     <div key={row} className="row">
-      {Array.from({ length: ROW_LENGTH }, (_, col) => {
-        const adjustedRow = (GAMEBOARD_SIZE / ROW_LENGTH) - 1 - row; // Reverse the rows
-        const position = adjustedRow % 2 === 0
-          ? adjustedRow * ROW_LENGTH + col + 1
-          : adjustedRow * ROW_LENGTH + ((ROW_LENGTH - 1) - col) + 1;
-        const cell = cells.find((c) => c.position === position);
-        const cellColor = getCellColor(position, ladders);
-        const { symbol, color, fontweight } = getLadderSymbol(ladders, position);
-
-        // console.log('Position', position, symbol, color, fontweight);
+      {Array.from({ length: cols }, (_, col) => {
+        const adjustedRow = rows - 1 - row; // bottom row is squares 1..cols
+        const position =
+          adjustedRow % 2 === 0
+            ? adjustedRow * cols + col + 1
+            : adjustedRow * cols + (cols - 1 - col) + 1;
+        const info = cellInfo(board, position);
+        const alt = (position + Math.floor((position - 1) / cols)) % 2 === 0;
+        const here = players.filter((p) => p.position === position);
         return (
           <div
             key={col}
-            className={`cell ${cellColor}`}
+            className={`cell ${alt ? "cell--alt" : ""} ${info.fillClass}`}
             id={`platform-${position}`}
           >
-            <span
-              style={{
-                fontWeight: fontweight,
-                color: color,
-              }}
-            >
-              {position}{" "}
-              {symbol}
-            </span>
-
-
-            {cell?.players.map((player) => (
-              <div key={player.id} className="player-icon" style={{ backgroundColor: player.color }}>🧑</div>
-            ))}
+            <span className="cell__num">{position}</span>
+            {info.badge && (
+              <span className={`cell__badge ${info.badge.className}`}>{info.badge.text}</span>
+            )}
+            {info.endmark && (
+              <span className={`cell__endmark ${info.endmark.className}`}>{info.endmark.symbol}</span>
+            )}
+            {here.length > 0 && (
+              <div className="cell__pucks">
+                {here.map((p) => (
+                  <span
+                    key={p.id}
+                    className={`puck ${p.id === currentTurnId ? "puck--active" : ""}`}
+                    style={{ backgroundColor: p.color }}
+                    title={p.name}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         );
       })}
     </div>
   ));
 
-  return <div className="grid">{grid}</div>;
+  return (
+    <div
+      className="grid"
+      style={{ ["--grid-rows" as string]: rows, ["--grid-columns" as string]: cols } as React.CSSProperties}
+    >
+      {rowEls}
+    </div>
+  );
 };
 
 export default Grid;

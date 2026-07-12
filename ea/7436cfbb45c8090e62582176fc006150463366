@@ -1,0 +1,21 @@
+src/game/types.ts
+  s_a9b906c21660c4::t_f4cfe02cd991bc 1-59
+src/game/board.test.ts
+  s_a9b906c21660c4::t_f369096c266461 1-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "ea7436cfbb45c8090e62582176fc006150463366",
+  "prompts": {},
+  "sessions": {
+    "s_a9b906c21660c4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e4f2aeb-d386-45f9-8e21-db3357338020",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    }
+  }
+}

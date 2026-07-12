@@ -1,0 +1,21 @@
+src/game/reducer.ts
+  s_a9b906c21660c4::t_8f8e5c15e6628b 1-149
+src/game/reducer.test.ts
+  s_a9b906c21660c4::t_9b8c2e3289ad36 1-75
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "e281632574ed1c0fbb5909029a5fb89801fe17cb",
+  "prompts": {},
+  "sessions": {
+    "s_a9b906c21660c4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e4f2aeb-d386-45f9-8e21-db3357338020",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    }
+  }
+}

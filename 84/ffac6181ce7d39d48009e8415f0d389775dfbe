@@ -1,0 +1,103 @@
+src/game/types.ts
+  s_a9b906c21660c4::t_f4cfe02cd991bc 1-59
+src/game/board.test.ts
+  s_a9b906c21660c4::t_f369096c266461 3-57
+  s_a9b906c21660c4::t_293ec1c1f7de35 58-119
+  s_a9b906c21660c4::t_9e416f2e5e3b5a 1-2
+src/game/board.ts
+  s_a9b906c21660c4::t_7333d47ab7b0e0 1-76
+src/game/reducer.ts
+  s_a9b906c21660c4::t_8f8e5c15e6628b 1-149
+src/game/reducer.test.ts
+  s_a9b906c21660c4::t_9b8c2e3289ad36 1-75
+src/hooks/useGame.ts
+  s_a9b906c21660c4::t_5e57a71c9c0229 1-120
+package.json
+  s_a9b906c21660c4::t_b21565ac629b8e 22
+package-lock.json
+  s_a9b906c21660c4::t_550d1622f1bfb6 18,48-51,53,55,367-370,2511-2520,2535-2547,2564-2573,2587-2610,3461-3683,13053-13068,16451-16453,16455,16457,16681-16683,18012-18017,18029-18037,18051-18056,18067-18084,18717-18878,25453-25464
+.gitignore
+  s_a9b906c21660c4::t_f771222e964a56 2-3
+src/App.tsx
+  s_a9b906c21660c4::t_020332bdc63358 2,9-10,17,20,33,38,40,43,81,86
+  s_a9b906c21660c4::t_5e6f448f9f78e3 4-8,11-12,15-16,23-24,26-32,34-37,39,41-42,44-79,82-84
+src/components/Grid.tsx
+  s_a9b906c21660c4::t_d45440ffd9fff4 2-3,6-7,18,30,41,43,48,50-55,58,82,90-92,94-95,96-97
+  s_a9b906c21660c4::t_f9a39ab8ffb821 8,11-17,19-29,31-40,42,45-46,56-57,60-81,83,93
+.omc/state/agent-replay-5e4f2aeb-d386-45f9-8e21-db3357338020.jsonl
+  s_a9b906c21660c4::t_7c4ea0362eea03 4-8
+  s_a9b906c21660c4::t_aa680bcf024689 9-11
+.omc/project-memory.json
+  s_a9b906c21660c4::t_c1e9cdcc3ed567 121-123,130-133,146,167-202
+  s_56f174e3e000dc::t_8d0299e15d2467 128-129,134-145,147,203-250
+src/components/TurnIndicator.tsx
+  s_a9b906c21660c4::t_d5a0880e65a367 1-51
+src/components/MoveLog.tsx
+  s_a9b906c21660c4::t_b741e5f49becb6 1-41
+DESIGN.md
+  s_a9b906c21660c4::t_06cf4cd07ecee3 1-57
+public/index.html
+  s_a9b906c21660c4::t_1c3a47080bf7d0 7-15
+src/components/Dice.tsx
+  s_a9b906c21660c4::t_7a86a4b3f3b626 1-39
+src/components/Scoreboard.tsx
+  s_a9b906c21660c4::t_e0f6ebd5645563 1-46
+src/components/SetupPanel.tsx
+  s_a9b906c21660c4::t_e5a24deb650876 1-100
+src/styles/app.css
+  s_a9b906c21660c4::t_86555ee0750138 9-10,13
+  s_a9b906c21660c4::t_be7cfd77f71097 174
+  s_a9b906c21660c4::t_ccb50b174a0c82 1-8,11-12,14-173,175-329
+src/styles/tokens.css
+  s_a9b906c21660c4::t_5b00658f43b6b6 1-50
+.omc/state/hud-stdin-cache.json
+  s_a9b906c21660c4::t_8d1beb332e8947 1
+.omc/state/idle-notif-cooldown.json
+  s_1edbfeb4f277e8::t_3e14e9b32d6286 2
+.omc/state/subagent-tracking.json
+  s_a9b906c21660c4::t_8022c00ccc4807 6
+TODO.md
+  s_a9b906c21660c4::t_de13259a869c5c 1,3,5-7,9,11-13
+README.md
+  s_a9b906c21660c4::t_a37c95171c2761 1,3-4,6-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "84ffac6181ce7d39d48009e8415f0d389775dfbe",
+  "prompts": {},
+  "sessions": {
+    "s_1edbfeb4f277e8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4c641240-11c0-45c2-aef7-5b2008355ea5",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    },
+    "s_54e7bacb8e8944": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f4f8669-8181-4331-9ee4-b3548734e859",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    },
+    "s_56f174e3e000dc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "6f51bbf0-ae7e-4b3e-bdef-4333e0c5da90",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    },
+    "s_a9b906c21660c4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e4f2aeb-d386-45f9-8e21-db3357338020",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    }
+  }
+}

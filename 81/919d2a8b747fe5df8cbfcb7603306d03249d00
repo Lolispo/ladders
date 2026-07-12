@@ -1,0 +1,23 @@
+src/hooks/useGame.ts
+  s_a9b906c21660c4::t_5e57a71c9c0229 1-120
+package.json
+  s_a9b906c21660c4::t_b21565ac629b8e 22
+package-lock.json
+  s_a9b906c21660c4::t_550d1622f1bfb6 18,48-51,53,55,367-370,2511-2520,2535-2547,2564-2573,2587-2610,3461-3683,13053-13068,16451-16453,16455,16457,16681-16683,18012-18017,18029-18037,18051-18056,18067-18084,18717-18878,25453-25464
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "81919d2a8b747fe5df8cbfcb7603306d03249d00",
+  "prompts": {},
+  "sessions": {
+    "s_a9b906c21660c4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e4f2aeb-d386-45f9-8e21-db3357338020",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.gitignore
+  s_a9b906c21660c4::t_f771222e964a56 2-3
+src/App.tsx
+  s_a9b906c21660c4::t_020332bdc63358 2,4-5,9-11,14,19-22,24-32,34-41,43,45-60,68,70-72,74
+src/components/Grid.tsx
+  s_a9b906c21660c4::t_d45440ffd9fff4 2-3,6-7,10-15,18-30,32-33,35,37-44,46-48,50-53,61-69
+.omc/state/subagent-tracking.json
+  s_54e7bacb8e8944::t_d60d597cb467cf 6
+.omc/state/agent-replay-5e4f2aeb-d386-45f9-8e21-db3357338020.jsonl
+  s_a9b906c21660c4::t_7c4ea0362eea03 4-8
+.omc/state/idle-notif-cooldown.json
+  s_a9b906c21660c4::t_faa4ce29d676b0 2
+.omc/project-memory.json
+  s_a9b906c21660c4::t_c1e9cdcc3ed567 121-123,128-135,155-190
+.omc/state/hud-stdin-cache.json
+  s_a9b906c21660c4::t_0630126de74c3f 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "9a40721a3c550116a22ff0fe48a4323f003847dd",
+  "prompts": {},
+  "sessions": {
+    "s_54e7bacb8e8944": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f4f8669-8181-4331-9ee4-b3548734e859",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    },
+    "s_a9b906c21660c4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e4f2aeb-d386-45f9-8e21-db3357338020",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    }
+  }
+}

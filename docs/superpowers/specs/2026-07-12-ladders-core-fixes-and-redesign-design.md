@@ -40,15 +40,21 @@ Extract all game logic from `App.tsx` into a `useGame` custom hook backed by
 always-fresh reducer state (and refs where needed for the animation loop)
 instead of captured closures.
 
-The hook owns: `players`, `board` (snakes + ladders), `dice` display state,
-`mode` (manual/auto), and `settings` (win condition, board dimensions). It
-exposes:
+The hook owns: `players`, `currentTurn` (whose turn it is), `board` (snakes +
+ladders), `dice` display state, `mode` (manual/auto), and `settings` (win
+condition, board dimensions, die sides). It exposes:
 
-- `rollDice()` — run one round (each active player rolls + animates in turn).
+- `rollDice()` — roll + animate for the **current player only**, then advance
+  the turn to the next active (unfinished) player.
 - `addPlayer()` / `removePlayer(id)`
 - `reset()` — regenerate board, reset players.
 - `toggleAuto()`
 - `updateSettings(partial)`
+
+**Turn model (turn-by-turn):** state tracks the current player. Each
+`rollDice()` advances only that player, then hands the turn to the next
+unfinished player (wrapping around, skipping finished players). Auto-mode
+advances one turn per tick. The UI shows whose turn it is.
 
 Animated stepping (moving one square at a time with a delay) is preserved, but
 all state reads go through the reducer/refs so there is no stale data.
@@ -71,9 +77,9 @@ Rules for the new generator (pure function, RNG injectable for testing):
 - **Distance cap:** each snake/ladder spans at most **half the board** (TODO:
   "Ladder max gain/loss half the map").
 - Never place a start or end on the first square or the last square.
-- **Counts scale with board area** (replacing the hard-coded 15). Roughly
-  proportional to number of cells; split between snakes and ladders. Exact
-  ratio tuned during implementation, documented in the hook.
+- **Moderate density that scales with board area:** target ~8 ladders + ~8
+  snakes on a 10×10 board, scaling proportionally with cell count for other
+  sizes. Small boards degrade gracefully (place as many as fit).
 
 ### C. Move + trigger fixes
 
@@ -94,13 +100,24 @@ A loop that:
 
 ### E. Player management
 
+- **Start a fresh game with 2 players**; soft **max of 6** (Add Player disabled
+  at the cap, to keep the board readable).
 - **Always-available "Add Player" button** (the missing control) + a **Remove**
   control per player.
 - Fix id/name collisions: currently `id`/`name` use `prevPlayers.length + 1`,
   which reuses ids as players finish. Use a monotonic counter.
 - **Drop** the auto-spawn-on-finish behavior now that adding is explicit.
 
-### F. Win condition (configurable)
+### F. Turn flow & game end
+
+- A player who reaches the last square is marked `finished` with a **finish
+  rank** (1st, 2nd, … by order of finishing) and is skipped in the turn
+  rotation.
+- Remaining players keep taking turns for placement. The game is **over** when
+  fewer than two unfinished players remain; the UI announces the winner /
+  final ranking and offers Reset.
+
+### G. Win condition (configurable)
 
 Setting with two modes:
 - **Overshoot wins (default):** landing on or past the last square wins (clamps).
@@ -118,7 +135,8 @@ Setting with two modes:
   overflows regardless of dimensions (fixes "too tall").
 - Polished cells with clear, distinct snake vs ladder visualization; refined
   dice animation; redesigned scoreboard + move-log; a proper controls/setup
-  panel (add/remove players, win-condition toggle, board dimensions, reset).
+  panel (add/remove players, win-condition toggle, board dimensions, die sides,
+  turn indicator, reset).
 - Remove all dead CSS (`.app-container`/`.left-container`/`.right-container` are
   unused) and inline-style layout.
 
@@ -127,6 +145,7 @@ Setting with two modes:
 - Win condition: overshoot-wins | exact-roll.
 - Board dimensions: rows × columns (default 10 × 10). Snake/ladder counts scale
   with area.
+- Die sides: configurable, default 6 (d6).
 
 ---
 

@@ -1,0 +1,152 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1783875575082,
+  "projectRoot": "/Users/petter/HobbyProjects/ladders",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "react",
+        "version": "18.2.0",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "18.2.0",
+        "category": "frontend"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": "npm test",
+    "lintCommand": null,
+    "devCommand": "npm run start",
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject",
+      "predeploy": "npm run build",
+      "deploy": "gh-pages -d build"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "master",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 1,
+      "lastAccessed": 1783875575054,
+      "keyFiles": [
+        "index.html"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 3,
+      "lastAccessed": 1783875575054,
+      "keyFiles": [
+        "App.tsx",
+        "index.tsx",
+        "styles.css"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 1,
+      "lastAccessed": 1783875575056,
+      "keyFiles": [
+        "Grid.tsx"
+      ]
+    },
+    "src/models": {
+      "path": "src/models",
+      "purpose": "Data models",
+      "fileCount": 2,
+      "lastAccessed": 1783875575057,
+      "keyFiles": [
+        "Constants.tsx",
+        "Player.tsx"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "docs/superpowers/specs/2026-07-12-ladders-core-fixes-and-redesign-design.md",
+      "accessCount": 8,
+      "lastAccessed": 1783879360212,
+      "type": "file"
+    },
+    {
+      "path": "src/App.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1783875772785,
+      "type": "file"
+    },
+    {
+      "path": "src/components/Grid.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1783875773323,
+      "type": "file"
+    },
+    {
+      "path": "src/models/Constants.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1783875773842,
+      "type": "file"
+    },
+    {
+      "path": "src/models/Player.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1783875774333,
+      "type": "file"
+    },
+    {
+      "path": "src/styles.css",
+      "accessCount": 1,
+      "lastAccessed": 1783875774634,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

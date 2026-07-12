@@ -1,0 +1,45 @@
+.omc/state/hud-stdin-cache.json
+  s_a9b906c21660c4::t_e9d82687a306ae 1
+docs/superpowers/specs/2026-07-12-ladders-core-fixes-and-redesign-design.md
+  s_a9b906c21660c4::t_fb728236a5056e 148
+  s_a9b906c21660c4::t_9fd15f8af3ddbe 103-104,111-118
+  s_a9b906c21660c4::t_10b38cd8ca5051 120
+  s_a9b906c21660c4::t_6b5fc808c6b63f 80-82
+  s_a9b906c21660c4::t_82af78aaaad54c 138-139
+  s_a9b906c21660c4::t_84eb0c5b6dca2c 43-45,47-48,54-57
+  s_54e7bacb8e8944::t_f7e8528f6ca4b7 58,119
+.omc/project-memory.json
+  s_54e7bacb8e8944::t_914f053c604700 1-152
+.omc/state/agent-replay-5e4f2aeb-d386-45f9-8e21-db3357338020.jsonl
+  s_a9b906c21660c4::t_c9e78deb619f59 1-3
+.omc/state/hud-state.json
+  s_a9b906c21660c4::t_350c613054a6fe 1-6
+.omc/state/idle-notif-cooldown.json
+  s_a9b906c21660c4::t_23351492e0c9ce 1-3
+.omc/state/subagent-tracking.json
+  s_a9b906c21660c4::t_1949dfe43b09f1 1-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "55c71658c38c50770d5826e2201734a3bc7399c9",
+  "prompts": {},
+  "sessions": {
+    "s_54e7bacb8e8944": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4f4f8669-8181-4331-9ee4-b3548734e859",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    },
+    "s_a9b906c21660c4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e4f2aeb-d386-45f9-8e21-db3357338020",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    }
+  }
+}

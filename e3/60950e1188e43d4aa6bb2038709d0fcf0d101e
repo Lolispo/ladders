@@ -1,0 +1,19 @@
+docs/superpowers/specs/2026-07-12-ladders-core-fixes-and-redesign-design.md
+  s_a9b906c21660c4::t_e0cd12dc06dce7 1-160
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "e360950e1188e43d4aa6bb2038709d0fcf0d101e",
+  "prompts": {},
+  "sessions": {
+    "s_a9b906c21660c4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5e4f2aeb-d386-45f9-8e21-db3357338020",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    }
+  }
+}

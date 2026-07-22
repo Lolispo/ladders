@@ -2,7 +2,7 @@
   "name": "react-grid-app",
   "version": "1.0.0",
   "description": "A simple React app showcasing a 10x10 grid of HTML elements",
-  "homepage": "https://lolispo.github.io/ladders",
+  "homepage": ".",
   "main": "index.tsx",
   "scripts": {
     "start": "react-scripts start",

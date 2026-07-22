@@ -1,0 +1,29 @@
+asset-manifest.json
+  s_35220db4bb8c62::t_929d28303d2b9f 3-4,6-7,10-11
+index.html
+  s_35220db4bb8c62::t_0b49a7ece6f554 1
+static/css/main.bf3b42e1.css
+  s_35220db4bb8c62::t_1bfe7b956986cb 1-2
+static/css/main.bf3b42e1.css.map
+  s_35220db4bb8c62::t_3fdad8f55c83d8 1
+static/js/main.b6396c17.js
+  s_35220db4bb8c62::t_d8f7935de5e61b 1-3
+static/js/main.b6396c17.js.map
+  s_35220db4bb8c62::t_0382b8df16f715 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "54b286f17d117efe9df43a44f31c2414c85efd6a",
+  "prompts": {},
+  "sessions": {
+    "s_35220db4bb8c62": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e86950c1-dffb-4883-bef0-ebac16fc8400",
+        "model": "unknown"
+      },
+      "human_author": "Petter Andersson <12279747+Lolispo@users.noreply.github.com>"
+    }
+  }
+}

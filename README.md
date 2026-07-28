@@ -3,7 +3,7 @@
 A modern, single-page Snakes & Ladders game built with React + TypeScript.
 Climb the ladders, dodge the snakes, race to the last square.
 
-**Play:** https://lolispo.github.io/ladders/
+**Play:** https://ladders.petterbuilds.com/
 
 ## Features
 
@@ -24,8 +24,11 @@ npm install
 npm start        # dev server at http://localhost:3000
 npm test         # unit tests (game logic)
 npm run build    # production build
-npm run deploy   # publish to GitHub Pages
 ```
+
+Deploys are automatic: pushing to `main` runs `.github/workflows/deploy.yml`, which
+calls the shared platform workflow in `Lolispo/ci` to build and publish to
+https://ladders.petterbuilds.com/. There is no manual deploy step.
 
 ## Architecture
 

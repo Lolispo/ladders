@@ -1,0 +1,16 @@
+{
+  "summary": "Snakes & Ladders.",
+  "status": "live",
+  "tier": "active",
+  "resources": [
+    {
+      "kind": "s3-prefix",
+      "id": "petterbuilds-apps/ladders"
+    },
+    {
+      "kind": "platform-shared",
+      "id": "petterbuilds-edge",
+      "note": "CloudFront + router that serves this app; owned by web-platform"
+    }
+  ]
+}
